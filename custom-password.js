@@ -121,7 +121,7 @@ const CustomPass = {
         result += "•";
       }
       e.target.value = result;
-      d.setCaretPosition(e.target, start);
+      CustomPass.setCaretPosition(e.target, start);
 
       _password.status = false;
 
