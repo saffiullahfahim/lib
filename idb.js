@@ -17,7 +17,7 @@ class IDB {
   }
 
   // existing database
-  exit(database) {
+  exist(database) {
     return new Promise((resolve, reject) => {
       let request = window.indexedDB.open(this.name);
       request.onsuccess = (e) => {
