@@ -238,7 +238,7 @@ class IDB {
     });
   }
 
-  // get All
+  // get All Values
   getAllValues(type) {
     return new Promise((resolve, reject) => {
       let request = window.indexedDB.open(this.name);
@@ -264,6 +264,19 @@ class IDB {
           reject(err);
         };
       };
+    });
+  }
+
+  // delete database
+  delete() {
+    return new Promise((resolve, reject) => {
+      let request = window.indexedDB.deleteDatabase(this.name);
+      request.onsuccess = (e) => {
+        console.log(`Successfully Delete ${this.name} database!`);
+        resolve("success");
+      };
+
+      request.onerror = reject;
     });
   }
 }
