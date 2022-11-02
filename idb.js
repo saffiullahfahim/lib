@@ -36,7 +36,7 @@ class IDB {
   }
 
   // create new data base
-  createDataBase(databaseName, option = { autoIncrement: true }) {
+  createDataBase(databaseName, option = { autoIncrement: true, keyPath: undefined }) {
     return new Promise((resolve, reject) => {
       let request = window.indexedDB.open(this.name);
       request.onsuccess = (e) => {
